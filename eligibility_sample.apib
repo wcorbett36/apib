@@ -37,7 +37,7 @@ Eligbility sample api for testing
         - postalCode":"45458" (string, required) 
         - enrolledMemberPhone":" " (string, required) 
         - enrolledMemberEmail":" " (string, required)
-
+        - fakeAttrib: "fake" (string, required)
     
     + Headers
 
@@ -55,6 +55,7 @@ Eligbility sample api for testing
             "socialSecurityNumber":"123456789",
             "sourceSystemMemberId":"11115559101",
             "subscriberRelationshipDescription":"Subscriber",
+            "fakeAttrib":"fake", 
             "subscriberRelationshipCode":"SUB",
             "group":
             [{"groupName":"LANCE,INC.",
@@ -127,6 +128,9 @@ Eligbility sample api for testing
                               "type": "string"
                             },
                             "subscriberRelationshipDescription": {
+                              "type": "string"
+                            },
+                            "fakeAttrib": {
                               "type": "string"
                             },
                             "subscriberRelationshipCode": {
@@ -269,6 +273,7 @@ Eligbility sample api for testing
                             "socialSecurityNumber",
                             "sourceSystemMemberId",
                             "subscriberRelationshipDescription",
+                            "fakeAttrib",
                             "subscriberRelationshipCode",
                             "group",
                             "policy",

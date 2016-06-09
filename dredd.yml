@@ -31,5 +31,5 @@ hooks-worker-term-timeout: 5000
 hooks-worker-term-retry: 500
 hooks-worker-handler-host: localhost
 hooks-worker-handler-port: 61321
-blueprint: eligibility_sample.apib
+blueprint: apiary.apib
 endpoint: 'https://servicesps.bcbsnc.com/'
