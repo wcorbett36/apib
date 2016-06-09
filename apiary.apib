@@ -1,0 +1,290 @@
+FORMAT: 1A
+HOST: https://servicesps.bcbsnc.com/
+
+# eligibility_sample
+
+Eligbility sample api for testing 
+
+## Questions Collection [/claims]
+
+### Get Claims [GET]
+
++ Response 200 (application/json)
+
+    + Attributes 
+     
+        - givenName:"Bob" (string, required)
+        - middleName:"A" (string, required) 
+        - familyName":"CAHOON" (string, required) 
+        - birthDate:"1984-01-17" (date, required) 
+        - externalSourceId":"W5552393201" (string, required)
+        - genderCode":"M" (string, required) 
+        - socialSecurityNumber":"123456789" (number, required) 
+        - sourceSystemMemberId":"11115559101" (number, required) 
+        - subscriberRelationshipDescription":"Subscriber" (string, required) 
+        - subscriberRelationshipCode":"SUB" (string, required)
+        - groupName:"LANCE,INC." (string, required)
+        - groupNumber":"008947" (string, required)
+        - lineOfBusinessCode:"PPO1" (string, required) 
+        - memberOnExchangeIndicator:"N" (string, required) 
+        - benefitOptionGroupTypeCode:"DRU;MED;MTH;SAB" (string, required)
+        - lineOfBusinessDescription:"Blue Options" (string, required) 
+        - enrollmentEffectiveDate:"2011-01-01" (date, required) 
+        - enrollmentExpirationDate":"2011-03-11" (date, required) 
+        - addressLine1":"555 JACK WAY" (string, required) 
+        - cityName":"DAYTON" (string, required) 
+        - stateCode":"OH" (string, required)
+        - postalCode":"45458" (string, required) 
+        - enrolledMemberPhone":" " (string, required) 
+        - enrolledMemberEmail":" " (string, required)
+
+    
+    + Headers
+
+    + Body
+    
+            {
+            "claimsStatus":
+            [
+            {"member":
+            [{"givenName":"Bob","middleName":"A",
+            "familyName":"CAHOON",
+            "birthDate":"1984-01-17",
+            "externalSourceId":"W5552393201",
+            "genderCode":"M",
+            "socialSecurityNumber":"123456789",
+            "sourceSystemMemberId":"11115559101",
+            "subscriberRelationshipDescription":"Subscriber",
+            "subscriberRelationshipCode":"SUB",
+            "group":
+            [{"groupName":"LANCE,INC.",
+            "groupNumber":"008947"}],
+            "policy":[{"lineOfBusinessCode":"PPO1",
+            "memberOnExchangeIndicator":"N",
+            "productOffering":[{"benefitOptionGroupTypeCode":"DRU;MED;MTH;SAB"}],
+            "lineOfBusinessDescription":"Blue Options"}],
+            "policyMemberShip":
+            [{
+            "enrollmentEffectiveDate":"2011-01-01",
+            "enrollmentExpirationDate":"2011-03-11"
+            }
+            ],
+            "memberContact":
+            [{"enrolledMemberAddress":
+            [
+            {"addressLine1":"555 JACK WAY",
+            "cityName":"DAYTON",
+            "stateCode":"OH",
+            "postalCode":"45458"}],
+            "enrolledMemberPhone":[{}],
+            "enrolledMemberEmail":[{}]
+            }
+            ]
+            }
+            ]
+            }
+            ]
+            }
+
+    + Schema
+    
+                {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "object",
+              "properties": {
+                "claimsStatus": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "member": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "givenName": {
+                              "type": "string"
+                            },
+                            "middleName": {
+                              "type": "string"
+                            },
+                            "familyName": {
+                              "type": "string"
+                            },
+                            "birthDate": {
+                              "type": "string"
+                            },
+                            "externalSourceId": {
+                              "type": "string"
+                            },
+                            "genderCode": {
+                              "type": "string"
+                            },
+                            "socialSecurityNumber": {
+                              "type": "string"
+                            },
+                            "sourceSystemMemberId": {
+                              "type": "string"
+                            },
+                            "subscriberRelationshipDescription": {
+                              "type": "string"
+                            },
+                            "subscriberRelationshipCode": {
+                              "type": "string"
+                            },
+                            "group": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "groupName": {
+                                    "type": "string"
+                                  },
+                                  "groupNumber": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "groupName",
+                                  "groupNumber"
+                                ]
+                              }
+                            },
+                            "policy": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "lineOfBusinessCode": {
+                                    "type": "string"
+                                  },
+                                  "memberOnExchangeIndicator": {
+                                    "type": "string"
+                                  },
+                                  "productOffering": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "benefitOptionGroupTypeCode": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "benefitOptionGroupTypeCode"
+                                      ]
+                                    }
+                                  },
+                                  "lineOfBusinessDescription": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "lineOfBusinessCode",
+                                  "memberOnExchangeIndicator",
+                                  "productOffering",
+                                  "lineOfBusinessDescription"
+                                ]
+                              }
+                            },
+                            "policyMemberShip": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "enrollmentEffectiveDate": {
+                                    "type": "string"
+                                  },
+                                  "enrollmentExpirationDate": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "enrollmentEffectiveDate",
+                                  "enrollmentExpirationDate"
+                                ]
+                              }
+                            },
+                            "memberContact": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "enrolledMemberAddress": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "addressLine1": {
+                                          "type": "string"
+                                        },
+                                        "cityName": {
+                                          "type": "string"
+                                        },
+                                        "stateCode": {
+                                          "type": "string"
+                                        },
+                                        "postalCode": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "addressLine1",
+                                        "cityName",
+                                        "stateCode",
+                                        "postalCode"
+                                      ]
+                                    }
+                                  },
+                                  "enrolledMemberPhone": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  },
+                                  "enrolledMemberEmail": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "enrolledMemberAddress",
+                                  "enrolledMemberPhone",
+                                  "enrolledMemberEmail"
+                                ]
+                              }
+                            }
+                          },
+                          "required": [
+                            "givenName",
+                            "middleName",
+                            "familyName",
+                            "birthDate",
+                            "externalSourceId",
+                            "genderCode",
+                            "socialSecurityNumber",
+                            "sourceSystemMemberId",
+                            "subscriberRelationshipDescription",
+                            "subscriberRelationshipCode",
+                            "group",
+                            "policy",
+                            "policyMemberShip",
+                            "memberContact"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "member"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "claimsStatus"
+              ]
+            }
