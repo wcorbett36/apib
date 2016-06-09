@@ -31,14 +31,13 @@ Eligbility sample api for testing
         - lineOfBusinessDescription:"Blue Options" (string, required) 
         - enrollmentEffectiveDate:"2011-01-01" (date, required) 
         - enrollmentExpirationDate":"2011-03-11" (date, required) 
-        - addressLine1:"555 JACK WAY" (string, required) 
-        - cityName:"DAYTON" (string, required) 
-        - stateCode:"OH" (string, required)
-        - postalCode:"45458" (string, required) 
-        - enrolledMemberPhone:" " (string, required) 
-        - enrolledMemberEmail:" " (string, required)
-        - fakeAttrib: " " (string, required) 
-
+        - addressLine1":"555 JACK WAY" (string, required) 
+        - cityName":"DAYTON" (string, required) 
+        - stateCode":"OH" (string, required)
+        - postalCode":"45458" (string, required) 
+        - enrolledMemberPhone":" " (string, required) 
+        - enrolledMemberEmail":" " (string, required)
+        - fakeAttrib: "fake" (string, required)
     
     + Headers
 
@@ -56,6 +55,7 @@ Eligbility sample api for testing
             "socialSecurityNumber":"123456789",
             "sourceSystemMemberId":"11115559101",
             "subscriberRelationshipDescription":"Subscriber",
+            "fakeAttrib":"fake", 
             "subscriberRelationshipCode":"SUB",
             "group":
             [{"groupName":"LANCE,INC.",
@@ -76,7 +76,6 @@ Eligbility sample api for testing
             {"addressLine1":"555 JACK WAY",
             "cityName":"DAYTON",
             "stateCode":"OH",
-            "fakeAttrib":"",
             "postalCode":"45458"}],
             "enrolledMemberPhone":[{}],
             "enrolledMemberEmail":[{}]
@@ -107,9 +106,6 @@ Eligbility sample api for testing
                             "givenName": {
                               "type": "string"
                             },
-                            "fakeattrib": { 
-                              "type": "string" 
-                            },
                             "middleName": {
                               "type": "string"
                             },
@@ -134,6 +130,9 @@ Eligbility sample api for testing
                             "subscriberRelationshipDescription": {
                               "type": "string"
                             },
+                            "fakeAttrib": {
+                              "type": "string"
+                            },
                             "subscriberRelationshipCode": {
                               "type": "string"
                             },
@@ -151,8 +150,7 @@ Eligbility sample api for testing
                                 },
                                 "required": [
                                   "groupName",
-                                  "groupNumber", 
-                                  "fakeAttrib"ded
+                                  "groupNumber"
                                 ]
                               }
                             },
@@ -275,6 +273,7 @@ Eligbility sample api for testing
                             "socialSecurityNumber",
                             "sourceSystemMemberId",
                             "subscriberRelationshipDescription",
+                            "fakeAttrib",
                             "subscriberRelationshipCode",
                             "group",
                             "policy",
